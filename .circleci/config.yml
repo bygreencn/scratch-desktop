@@ -4,10 +4,10 @@ workflows:
     jobs:
       - build_for_macos:
           context: scratch-desktop-and-link
-  windows:
-    jobs:
-      - build_for_windows:
-          context: scratch-desktop-and-link
+#  windows:
+#    jobs:
+#      - build_for_windows:
+#          context: scratch-desktop-and-link
 orbs:
   windows: circleci/windows@2.4.0
 aliases:
