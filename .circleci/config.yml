@@ -58,6 +58,7 @@ jobs:
                     echo "$2" | base64 --decode > "$1"
                   }
                   decodeToFile embedded.provisionprofile "${MAC_PROVISION_PROFILE}"
+                  decodeToFile mas-dev.provisionprofile "${MAC_DEV_PROVISION_PROFILE}"
                   decodeToFile code-to-learn-macos.p12 "${CSC_MACOS}"
                   security -v create-keychain -p circleci circleci.keychain
                   security -v default-keychain -s circleci.keychain
