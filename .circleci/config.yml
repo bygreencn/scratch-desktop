@@ -98,6 +98,12 @@ jobs:
             *should_sign
           steps:
             - run:
+                name: Zip MAS-Dev to artifacts directory
+                command: |
+                  NPM_APP_VERSION="`node -pe "require('./package.json').version"`"
+                  cd dist/mas-dev
+                  zip -9 --verbose --symlinks --recurse-paths ../../Artifacts/mas-dev-${NPM_APP_VERSION}.zip "Scratch Desktop.app"
+            - run:
                 name: Move PKG to artifacts directory
                 command: |
                   mv -v dist/mas/Scratch*.pkg Artifacts/
